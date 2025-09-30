@@ -1,5 +1,6 @@
 # Automatic Light Controller using LDR and Arduino UNO controller.
-
+## 212223060200
+## pradeep m
 ##  AIM:
 
 To design and simulate automatic light controller using LDR and Arduino UNO controller in proteus.
@@ -64,9 +65,61 @@ LDR Features of LDR are as follows:
 
 ## PROGRAM:
 
+int sensorPin = A0;
+
+int sensorValue = 0; 
+
+void setup() 
+
+{
+
+Serial.begin(9600); 
+
+pinMode(13, OUTPUT);
+
+}
+
+void loop() 
+
+{
+
+  sensorValue = analogRead(sensorPin);
+  
+  Serial.print("OUTPUT:");
+  
+  Serial.println(sensorValue); 
+  
+  delay(500);
+  
+  if(sensorValue<=400)
+  
+  {
+  
+  digitalWrite(13, HIGH);  
+  
+  delay(500);
+  
+  }
+  
+  else
+  
+  {
+  
+  digitalWrite(13, LOW);  
+  
+  delay(500);
+  
+  }
+  
+}
+
 ## CIRCUIT DIAGRAM:
 
+<img width="1280" height="686" alt="image" src="https://github.com/user-attachments/assets/afdb26fd-28c4-4544-a8c8-c62aa0c95c9c" />
+
 ## OUTPUT:
+
+<img width="1280" height="687" alt="image" src="https://github.com/user-attachments/assets/967d9e7b-7696-44ac-a5a3-6f75bba40194" />
 
 ## RESULT:
 Thus the automatic light controller was designed and simulated using LDR and Arduino UNO controller.
